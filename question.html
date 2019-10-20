@@ -12,7 +12,7 @@
         <header>
             <nav>
                 <ul>
-                    <li><a href="purpose.html">HOME</a></li>
+                    <li><a href="index.html">TOP</a></li>
                     <li><a href="privacy.html">プライバシー</a></li>
                     <li><a href="contact.html">お問い合わせ</a></li>
                 </ul>
@@ -21,21 +21,23 @@
         </header>
 
         <main>
+
             <div class="title">
             <h2>観光調査</h2>
             </div>
+
             <div class="discription">
                 <h5>回答時間目安　ｘ分</h5>
                 <h5>質問は全部でｘ個あります。</h5>
             </div>
-            <div class="questions-form"> 
+
+            <div class="questions-form">
+
                 <!--回答者の情報-->
-                <h3 class="questions-title">質問1.性別</h3>
-                    <input type="radio" name="性別" value="男">男
-                    <input type="radio" name="性別" value="女">女
-                    <input type="radio" name="性別" value="無回答">無回答
-                <h3 class="questions-title">質問2.年齢</h3>            
+
+                <h3 class="questions-title" aria-required="true" required>質問1.年齢</h3>
                     <select name="年齢">
+                      <option></option>
                       <option>10代</option>
                       <option>20代</option>
                       <option>30代</option>
@@ -45,8 +47,17 @@
                       <option>70代</option>
                       <option>80代以上</option>
                     </select>     
-                <h3 class="questions-title">質問3.お住まいはどちらですか？</h3>
+
+                <h3 class="questions-title" aria-required="true" required>質問2.性別</h3>
+                    <select name="性別">
+                        <option></option>
+                        <option>男</option>
+                        <option>女</option>
+                    </select>
+
+                <h3 class="questions-title" aria-required="true" required>質問3.お住まいはどちらですか？</h3>
                     <select name="居住">
+                        <option></option>
                         <option>北海道</option>
                         <option>東北</option>
                         <option>関東</option>
@@ -58,8 +69,10 @@
                         <option>沖縄</option>
                         <option>海外</option>
                     </select>
-                <h3 class="questions-title">質問4.ご職業</h3>
+
+                <h3 class="questions-title" aria-required="true" required>質問4.ご職業</h3>
                     <select name="職業">
+                        <option></option>
                         <option>会社員</option>
                         <option>公務員</option>
                         <option>自営業</option>
@@ -70,14 +83,12 @@
                         <option>パート</option>
                         <option>その他</option>
                     </select>
+
                     <!--動向について-->
-                <h3 class="questions-title">質問5.この施設に来た理由を教えてください。</h3>
-                    <input type="checkbox" name="目的" value="観光">観光
-                    <input type="checkbox" name="目的" value="買い物">買い物
-                    <input type="checkbox" name="目的" value="休憩">休憩
-                    <input type="checkbox" name="目的" value="その他">その他
-                <h3 class="questions-title">質問6.この施設の利用頻度を教えてください。</h3>
+
+                <h3 class="questions-title" aria-required="true" required>質問5.この施設の利用頻度を教えてください。</h3>
                     <select name="頻度">
+                        <option></option>
                         <option>ほぼ毎日</option>
                         <option>1週間に2〜4回程度</option>
                         <option>週に1回程度</option>
@@ -86,15 +97,19 @@
                         <option>半年に1回程度</option>
                         <option>それ以下の頻度</option>
                     </select>
-                <h3 class="questions-title">質問7.移動手段を教えてください。</h3>
+
+                <h3 class="questions-title" aria-required="true" required>質問6.移動手段を教えてください。</h3>
                     <select name="移動">
+                        <option></option>
                         <option>自動車</option>
                         <option>バス</option>
                         <option>タクシー</option>
-                        <option>自転車</option>                  
+                        <option>自転車</option>
                     </select>
-                <h3 class="questions-title">質問8.この場所を何から見聞きしてお知りになりましたか？</h3>
+
+                <h3 class="questions-title" aria-required="true" required>質問9.この場所を何から見聞きしてお知りになりましたか？</h3>
                     <select name="メディア">
+                        <option></option>
                         <option>テレビ</option>
                         <option>新聞・雑誌</option>
                         <option>SNS</option>
@@ -102,11 +117,22 @@
                         <option>交通広告・看板</option>
                         <option>家族・友人・知人</option>
                         <option>その他</option>
-                    </select>     
-                <h3 class="questions-title">質問x.</h3>
+                    </select>
 
-                <input class="questions-submit" type="submit" value="送信">
-                <input class="questions-reset" type="reset" value="やり直し">
+                <h3 class="questions-title" aria-required="true" required>質問x.</h3>
+
+                <!--位置情報-->
+                <h3 class="position" aria-required="true">現在地の位置情報を提供していただけますか？<br>※任意です</h3>
+                    <input type="checkbox">位置情報を提供する
+
+                <h3>個人情報の取り扱いについての事項に同意される方はチェックボックスにチェックをつけてください。</h3>
+                <p>
+                    <input type="checkbox" required>同意する
+                </p>
+
+                <h3>全ての質問に回答した方は送信を押してください</h3>
+
+                <input class="submit" type="submit" value="送信">
 
                 <h3>これでアンケートは終了です。<br>ご協力ありがとうごさいました。</h3>
             </div>
@@ -117,7 +143,7 @@
         <!--タイトル・リンク-->
         <nav>
             <ul>
-                <li><a href="index.html">HOME</a></li>
+                <li><a href="index.html">TOP</a></li>
                 <li><a href="privacy.html">プライバシー</a></li>
                 <li><a href="contact.html">お問い合わせ</a></li>
             </ul>
