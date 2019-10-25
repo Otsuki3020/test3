@@ -36,8 +36,8 @@ img {
  ----------------------*/
 header {
     width: 100%;
-    padding: 6em 0 4em;
-    background: url("../images/header_green.jpg") no-repeat fixed center bottom / cover ;
+    padding: 5em 0em 0.5em;
+    background: rgb(97, 193, 231);
     position: relative;
     text-align: center;
     color: #FFF;
@@ -64,7 +64,7 @@ header nav ul li a{
     cursor: pointer;
 }
 header h1 a {
-	color: #FFF;
+    color: #FFF;
 }
 /* メインエリア
  -------------------------------------------- */
@@ -79,21 +79,42 @@ main {
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
 }
 
-.box1{
-    padding: 0.1em;
-    margin: 2em 0;
-    color: #5989cf;
-    background: #c6e4ff;
-    border-bottom: solid 6px #aac5de;
+/* ボタン
+ -------------------------------------------- */
+.btn-square1 {
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin: 0.1em;
+    text-decoration: none;
+    background: #fa6964;/*ボタン色*/
+    color: #FFF;
     border-radius: 10px;
-}
-main .box1 h4 {
-    text-align: center;
-    font-size: 150%;
-    margin: 0%;
-    padding: 0%;
-}
-
+    cursor: pointer;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  }
+  .btn-square1:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  }
+  .btn-square2 {
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin: 0.1em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  }
+  .btn-square2:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+  }
 
 /* 送信・リセットボタン
  -------------------------------------------- */
@@ -131,5 +152,3 @@ footer nav ul li a {
     cursor: pointer;
     margin: 1%;
 }
-/* 質問内容の設定
- ---------------------------------*/
