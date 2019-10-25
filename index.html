@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>観光調査アンケート</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <script>
             // Geolocation APIに対応している
@@ -21,8 +21,12 @@
               navigator.geolocation.getCurrentPosition(
                 // 取得成功した場合
                 function(position) {
-                    position = ("緯度:"+position.coords.latitude+",経度"+position.coords.longitude);
+                    get_position = "緯度:"+position.coords.latitude+",経度"+position.coords.longitude;
+                    var data = function(){
+                      document.getElementById('data_position').textContent = get_position;
+                    }
                 },
+                
                 // 取得失敗した場合
                 function(error) {
                   switch(error.code) {
@@ -67,7 +71,8 @@
             <br>位置情報を提供する場合は端末の位置情報サービスの利用を許可してからアンケートに回答してください。</h2>
 
             <form name="position" method="POST" netlify>
-                <a class="btn-square1" onclick="getPosition();">位置情報を提供する！</a>
+                <a class="btn-square1" id="data_position" onclick="getPosition();">位置情報を提供する！</a>
+
                 
             </form>
 
