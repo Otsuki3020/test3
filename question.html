@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>アンケートフォーム</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 
 
 </head>
@@ -20,6 +20,50 @@
                 </ul>
             </nav>
             <h1><a href="index.html">観光調査アンケート</a></h1>
+            <script>
+                // Geolocation APIに対応している
+                if (navigator.geolocation) {
+                //    alert("この端末では位置情報が取得できます");
+                // Geolocation APIに対応していない
+                } else {
+                  alert("この端末では位置情報が取得できません");
+                }
+            
+                // 現在地取得処理
+                function getPosition() {
+                  // 現在地を取得
+                  navigator.geolocation.getCurrentPosition(
+                    // 取得成功した場合
+                    function(position) {
+                        get_position = ("緯度:"+position.coords.latitude+",経度"+position.coords.longitude);
+                    },
+                    // 取得失敗した場合
+                    function(error) {
+                      switch(error.code) {
+                        case 1: //PERMISSION_DENIED
+                          alert("位置情報の利用が許可されていません");
+                          break;
+                        case 2: //POSITION_UNAVAILABLE
+                          alert("現在位置が取得できませんでした");
+                          break;
+                        case 3: //TIMEOUT
+                          alert("タイムアウトになりました");
+                          break;
+                        default:
+                          alert("その他のエラー(エラーコード:"+error.code+")");
+                          break;
+                      }
+                    }
+                  );
+                }
+            </script>
+            <script>
+                function clickBtn1(){
+                    // 値を取得
+                    document.getElementById("textarea1").value = get_position;
+                }
+            </script>
+
         </header>
 
         <main>
@@ -37,7 +81,7 @@
 
                 <!--回答者の情報-->
 
-                <h3 class="questions-title" aria-required="true" required>質問1.年齢</h3>
+                <h4 class="questions-title" aria-required="true" required>質問1.年齢</h4>
                     <select name="年齢">
                       <option></option>
                       <option>10代</option>
@@ -50,14 +94,14 @@
                       <option>80代以上</option>
                     </select>     
 
-                <h3 class="questions-title" aria-required="true" required>質問2.性別</h3>
+                <h4 class="questions-title" aria-required="true" required>質問2.性別</h4>
                     <select name="性別">
                         <option></option>
                         <option>男</option>
                         <option>女</option>
                     </select>
 
-                <h3 class="questions-title" aria-required="true" required>質問3.お住まいはどちらですか？</h3>
+                <h4 class="questions-title" aria-required="true" required>質問3.お住まいはどちらですか？</h4>
                     <select name="居住">
                         <option></option>
                         <option>北海道</option>
@@ -72,7 +116,7 @@
                         <option>海外</option>
                     </select>
 
-                <h3 class="questions-title" aria-required="true" required>質問4.ご職業</h3>
+                <h4 class="questions-title" aria-required="true" required>質問4.ご職業</h4>
                     <select name="職業">
                         <option></option>
                         <option>会社員</option>
@@ -88,7 +132,7 @@
 
                     <!--動向について-->
 
-                <h3 class="questions-title" aria-required="true" required>質問5.この施設の利用頻度を教えてください。</h3>
+                <h4 class="questions-title" aria-required="true" required>質問5.この施設の利用頻度を教えてください。</h4>
                     <select name="頻度">
                         <option></option>
                         <option>ほぼ毎日</option>
@@ -100,7 +144,7 @@
                         <option>それ以下の頻度</option>
                     </select>
 
-                <h3 class="questions-title" aria-required="true" required>質問6.移動手段を教えてください。</h3>
+                <h4 class="questions-title" aria-required="true" required>質問6.移動手段を教えてください。</h4>
                     <select name="移動">
                         <option></option>
                         <option>自動車</option>
@@ -109,7 +153,7 @@
                         <option>自転車</option>
                     </select>
 
-                <h3 class="questions-title" aria-required="true" required>質問9.この場所を何から見聞きしてお知りになりましたか？</h3>
+                <h4 class="questions-title" aria-required="true" required>質問9.この場所を何から見聞きしてお知りになりましたか？</h4>
                     <select name="メディア">
                         <option></option>
                         <option>テレビ</option>
@@ -121,19 +165,24 @@
                         <option>その他</option>
                     </select>
 
-                <h3 class="questions-title" aria-required="true" required>質問x.</h3>
+                <h4 class="questions-title" aria-required="true" required>質問x.</h4>
 
-
-                <h3>個人情報の取り扱いについての事項に同意される方はチェックボックスにチェックをつけてください。</h3>
+                <p>
+                    <h5>位置情報の収集にご協力いただける場合は端末の位置情報サービスの設定をオンにしてから下のボタンを押してください。</h5>
+                    <textarea id="textarea1" value="1" cols="38" rows=5 maxlength="30" style="display:none" name="position"></textarea>
+                    <a class="btn-square1" id="data_position" onclick="getPosition();clickBtn1()">位置情報を提供する！</a>
+                </p>
+                <h5>個人情報の取り扱いについての事項に同意される方はチェックボックスにチェックをつけてください。</h5>
                 <p>
                     <input type="checkbox"aria-required="true" required>同意する
                 </p>
+                
 
-                <h3>全ての質問に回答した方は送信を押してください</h3>
+                <h4>全ての質問に回答した方は送信を押してください</h4>
 
                 <input class="submit" type="submit" value="送信">
 
-                <h3>これでアンケートは終了です。<br>ご協力ありがとうごさいました。</h3>
+                <h4>アンケートは終了です。<br>ご協力ありがとうごさいました。</h4>
             </div>
         </main>
     </form>
