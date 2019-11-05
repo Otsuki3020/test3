@@ -36,7 +36,7 @@
                     // 取得成功した場合
                     function(position) {
                         get_position = ("緯度:"+position.coords.latitude+",経度"+position.coords.longitude);
-                        alert = ("位置情報を取得しました！");
+                        alert("位置情報の取得を許可しました！");
                     },
                     // 取得失敗した場合
                     function(error) {
@@ -62,6 +62,7 @@
                 function clickBtn1(){
                     // 値を取得
                     document.getElementById("textarea1").value = get_position;
+                    alert("位置情報を取得しました！");
                 }
             </script>
 
