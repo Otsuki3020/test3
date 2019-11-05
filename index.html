@@ -1,52 +1,10 @@
 <DOCTYPE! HTML>
 <html lang="ja">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>観光調査アンケート</title>
-    <link rel="stylesheet" href="style.css">
-
-    <script>
-            // Geolocation APIに対応している
-            if (navigator.geolocation) {
-            //    alert("この端末では位置情報が取得できます");
-            // Geolocation APIに対応していない
-            } else {
-              alert("この端末では位置情報が取得できません");
-            }
-        
-            // 現在地取得処理
-            function getPosition() {
-              // 現在地を取得
-              navigator.geolocation.getCurrentPosition(
-                // 取得成功した場合
-                function(position) {
-                    get_position = "緯度:"+position.coords.latitude+",経度"+position.coords.longitude;
-                    var data = function(){
-                      document.getElementById('data_position').textContent = get_position;
-                    }
-                },
-                
-                // 取得失敗した場合
-                function(error) {
-                  switch(error.code) {
-                    case 1: //PERMISSION_DENIED
-                      alert("位置情報の利用が許可されていません");
-                      break;
-                    case 2: //POSITION_UNAVAILABLE
-                      alert("現在位置が取得できませんでした");
-                      break;
-                    case 3: //TIMEOUT
-                      alert("タイムアウトになりました");
-                      break;
-                    default:
-                      alert("その他のエラー(エラーコード:"+error.code+")");
-                      break;
-                  }
-                }
-              );
-            }
-          </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>観光調査アンケート</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -59,25 +17,18 @@
             </ul>
         </nav>
         <h1>観光調査アンケート</h1>
-        <p>観光についてのアンケートを実施中！<br>
-           抽選で〇〇をプレゼント！
+        <p>
+            観光についてのアンケートを実施中！<br>抽選で〇〇をプレゼント！           
         </p>
     </header>
 
     <main>
-        <h1>観光アンケートに答えると抽選で〇〇が当たる！</h1>
-        <h5>※アンケートの前に一時的な現在地の位置情報を要求します。
+        <h2>観光アンケートに答えると抽選で〇が当たる！</h2>
+        <h5>※アンケートの最後に一時的な現在地の位置情報を要求します。
             <br>位置情報の提供は任意です。
-            <br>位置情報を提供する場合は端末の位置情報サービスの利用を許可してからアンケートに回答してください。</h2>
+            <br>位置情報を提供する場合は端末の位置情報サービスの利用を許可してからアンケートに回答してください。</h5>
 
-            <form name="position" method="POST" netlify>
-                <a class="btn-square1" id="data_position" onclick="getPosition();">位置情報を提供する！</a>
-
-                
-            </form>
-
-
-            <a href="question.html" class="btn-square2">アンケートに答える！</a>
+        <a href="question.html" class="btn-square3">アンケートに答える！</a>
 
     </main>
 
