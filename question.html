@@ -36,6 +36,7 @@
                     // 取得成功した場合
                     function(position) {
                         get_position = ("緯度:"+position.coords.latitude+",経度"+position.coords.longitude);
+                        alert = ("位置情報を取得しました！");
                     },
                     // 取得失敗した場合
                     function(error) {
@@ -166,18 +167,16 @@
                     </select>
 
                 <h4 class="questions-title" aria-required="true" required>質問x.</h4>
+                <!-- 位置情報 -->
+                <h5>位置情報の収集にご協力いただける場合は端末の位置情報サービスの設定をオンにしてから下のボタンを押してください。</h5>
 
-                <p>
-                    <h5>位置情報の収集にご協力いただける場合は端末の位置情報サービスの設定をオンにしてから下のボタンを押してください。</h5>
-                    <textarea id="textarea1" value="1" cols="38" rows=5 maxlength="30" style="display:none" name="position"></textarea>
-                    <a class="btn-square1" id="data_position" onclick="getPosition();">位置情報サービスをオンにする！</a>
-                    <a class="btn-square1" id="data_position" onclick="clickBtn1();">位置情報を提供する！</a>
-                </p>
+                <textarea id="textarea1" value="1" cols="38" rows=5 maxlength="30" style="display:none" name="position"></textarea>
+                <a class="btn-square1" id="data_position" onclick="getPosition();">位置情報の使用を許可する</a>
+                <a class="btn-square2" id="data_position" onclick="clickBtn1();">位置情報を提供する！</a>
+
+                <!-- 同意 -->
                 <h5>個人情報の取り扱いについての事項に同意される方はチェックボックスにチェックをつけてください。</h5>
-                <p>
-                    <input type="checkbox"aria-required="true" required>同意する
-                </p>
-                
+                <input type="checkbox"aria-required="true" required>同意する                
 
                 <h4>全ての質問に回答した方は送信を押してください</h4>
 
