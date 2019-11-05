@@ -25,10 +25,7 @@ ul, li {
 
 a {text-decoration: none;}
 
-img {
-    max-width: 100%;
-    height: auto;
-}
+
 
 .center { text-align: center; }
 
@@ -36,7 +33,7 @@ img {
  ----------------------*/
 header {
     width: 100%;
-    padding: 5em 0em 0.5em;
+    padding: 0em 0em 0.5em;
     background: rgb(97, 193, 231);
     position: relative;
     text-align: center;
@@ -44,9 +41,9 @@ header {
 }
 header nav {
 	background: rgba(0, 0, 0, 0.1) ;
-	padding: 5% 0; 
+	padding: 2% 0; 
 	width: 100%;
-	position: absolute;
+	position: auto;
 	top: 0;
 }
 header nav ul{
@@ -81,12 +78,13 @@ main {
 
 /* ボタン
  -------------------------------------------- */
-.btn-square1 {
+/* 位置情報サービスの許可 */
+ .btn-square1 {
     display: inline-block;
     padding: 0.5em 1em;
     margin: 0.1em;
     text-decoration: none;
-    background: #fa6964;/*ボタン色*/
+    background: #e05c5c;/*ボタン色*/
     color: #FFF;
     border-radius: 10px;
     cursor: pointer;
@@ -98,12 +96,13 @@ main {
     transform: translateY(4px);/*下に動く*/
     border-bottom: none;/*線を消す*/
   }
+  /* 位置情報の提供 */
   .btn-square2 {
     display: inline-block;
     padding: 0.5em 1em;
     margin: 0.1em;
     text-decoration: none;
-    background: #668ad8;/*ボタン色*/
+    background: #fa6964;/*ボタン色*/
     color: #FFF;
     border-radius: 10px;
     cursor: pointer;
@@ -114,6 +113,25 @@ main {
     -webkit-transform: translateY(4px);
     transform: translateY(4px);/*下に動く*/
     border-bottom: none;/*線を消す*/
+  }
+  /* アンケートに回答する */
+  .btn-square3 {
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin: 0.1em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  }
+  .btn-square3:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+    
   }
 
 /* 送信・リセットボタン
