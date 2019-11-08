@@ -36,7 +36,7 @@
                     // 取得成功した場合
                     function(position) {
                         get_position = ("緯度:"+position.coords.latitude+",経度"+position.coords.longitude);
-                        alert("位置情報の取得を許可しました！");
+                        alert("位置情報を取得を許可しました！");
                     },
                     // 取得失敗した場合
                     function(error) {
@@ -62,7 +62,7 @@
                 function clickBtn1(){
                     // 値を取得
                     document.getElementById("textarea1").value = get_position;
-                    alert("位置情報を取得しました！");
+                    alert("位置情報を取得しました！")
                 }
             </script>
 
@@ -72,11 +72,6 @@
 
             <div class="title">
             <h2>観光調査</h2>
-            </div>
-
-            <div class="discription">
-                <h5>回答時間目安　ｘ分</h5>
-                <h5>質問は全部でｘ個あります。</h5>
             </div>
 
             <div class="questions-form">
@@ -155,7 +150,7 @@
                         <option>自転車</option>
                     </select>
 
-                <h4 class="questions-title" aria-required="true" required>質問9.この場所を何から見聞きしてお知りになりましたか？</h4>
+                <h4 class="questions-title" aria-required="true" required>質問7.この場所を何から見聞きしてお知りになりましたか？</h4>
                     <select name="メディア">
                         <option></option>
                         <option>テレビ</option>
